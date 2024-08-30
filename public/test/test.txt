@@ -1,0 +1,42 @@
+
+mian(long planing 
+keep in check)
+
+Year planing = 
+month = 
+week  = 
+days = 
+
+keep  = Day ( 3 task max "1 main task" ,")
+
+currently working on 
+
+Habbits = 
+
+graphs ya commits 
+
+dashboard  = Skills , finance , every thing (templatise)
+search
+
+Long task : in progress,done, Add time , time completion in home , no time then add something
+
+settings: max task: 3 Dashboard: Skills , Task , Future Goals Your Task for today
+-----------------------------------------------
+
+16(complete )
+
+4 = plannign and desiging (databse design,) 
+1 (80% - Frpntendplanign ) - 30min(100% planning)  - 2 hr (fronend)  
+
+4 = frontend  -  complete
+
+4 = backend 
+
+4 = deployement 
+
+//discontinuing 
+
+//next js has uncharted lands 
+
+
+
