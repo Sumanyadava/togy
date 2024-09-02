@@ -10,6 +10,8 @@ export default function Home() {
 
   const handleClick = (where:string) =>{
     router.push(`/${where}`)
+    console.log(where);
+    
   }
 
   return (
