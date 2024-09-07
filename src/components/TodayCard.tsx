@@ -48,7 +48,7 @@ const TodayCard: React.FC = () => {
     );
   };
 
-  if (isDesktop) {
+  
     return (
       <Popover>
         <PopoverTrigger asChild>
@@ -85,28 +85,8 @@ const TodayCard: React.FC = () => {
       </Popover>
     );
 
-    return (
-      <Drawer open={isCardVisible} onOpenChange={setIsCardVisible}>
-        <DrawerTrigger asChild>
-          <Button variant="outline" className="bg-white">Editdsfsdf Profile</Button>
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader className="text-left">
-            <DrawerTitle>Edit profile</DrawerTitle>
-            <DrawerDescription>
-              Make changes to your profile here. Click save when you're done.
-            </DrawerDescription>
-          </DrawerHeader>
-          
-          <DrawerFooter className="pt-2">
-            <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    );
-  }
+    
+  
 };
 
 const SetupItem: React.FC<SetupItemProps> = ({ text, completed, onToggle }) => (

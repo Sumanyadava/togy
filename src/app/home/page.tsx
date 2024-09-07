@@ -64,7 +64,7 @@ const page = () => {
         <LongTodo />
       </div>
 
-      <div className="absolute right-10 bottom-20">
+      <div className="absolute right-10 bottom-10">
         <TodayCard />
         
       </div>

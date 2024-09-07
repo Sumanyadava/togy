@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <>
       <Sheet>
-        <SheetTrigger className="absolute right-10 bottom-10">Open</SheetTrigger>
+        <SheetTrigger className="absolute right-10 bottom-5  w-10 h-10 bg-white rounded-full text-black">3</SheetTrigger>
 
         <SheetContent side={"left"}>
           <SheetHeader>

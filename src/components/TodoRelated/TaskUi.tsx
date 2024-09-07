@@ -18,7 +18,7 @@ const TaskUi = () => {
       </div>
 
       <Popover>
-        <PopoverTrigger>
+        <PopoverTrigger asChild>
           <Button variant={"ghost"} className="w-14">
             <Ellipsis className="h-5 w-[70px] " />
           </Button>
