@@ -14,7 +14,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/components/ui/drawer";
 
 import {
   Popover,
@@ -31,7 +31,7 @@ interface SetupItemProps {
 
 const TodayCard: React.FC = () => {
   const [isCardVisible, setIsCardVisible] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  
 
   const [tasks, setTasks] = useState([
     { text: "Watch Tutorial", completed: true },
@@ -48,45 +48,40 @@ const TodayCard: React.FC = () => {
     );
   };
 
-  
-    return (
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            size={"icon"}
-            className="mt-4 w-10 h-10 bg-white rounded-full"
-            onClick={() => setIsCardVisible(!isCardVisible)}
-          >
-            {isCardVisible ? <X /> : <HoursLeftInDay />}
-          </Button>
-        </PopoverTrigger>
+  return (
+    <Popover
+      open={isCardVisible}
+      onOpenChange={(isOpen) => setIsCardVisible(isOpen)}
+    >
+      <PopoverTrigger asChild>
+        <Button size={"icon"} className="rounded-full font-bold">
+          {isCardVisible ? <X /> : <HoursLeftInDay />}
+        </Button>
+      </PopoverTrigger>
 
-        <PopoverContent className=" bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border ">
+      <PopoverContent className=" bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border ">
+        <div className="">
+          <h2 className="text-white text-xl font-semibold mb-4">
+            Finish Today
+          </h2>
+          <p className="text-gray-400 mb-6">
+            <HoursLeftInDay timeZone="Asia/Kolkata" /> hours left.
+          </p>
+
           <div className="">
-            <h2 className="text-white text-xl font-semibold mb-4">
-              Finish Today
-            </h2>
-            <p className="text-gray-400 mb-6">
-              <HoursLeftInDay timeZone="Asia/Kolkata" /> hours left.
-            </p>
-
-            <div className="">
-              {tasks.map((task, index) => (
-                <SetupItem
-                  key={index}
-                  text={task.text}
-                  completed={task.completed}
-                  onToggle={() => toggleTaskCompletion(index)}
-                />
-              ))}
-            </div>
+            {tasks.map((task, index) => (
+              <SetupItem
+                key={index}
+                text={task.text}
+                completed={task.completed}
+                onToggle={() => toggleTaskCompletion(index)}
+              />
+            ))}
           </div>
-        </PopoverContent>
-      </Popover>
-    );
-
-    
-  
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
 };
 
 const SetupItem: React.FC<SetupItemProps> = ({ text, completed, onToggle }) => (

@@ -12,25 +12,31 @@ import { Button } from "./ui/button";
 Button;
 import { Input } from "@/components/ui/input";
 import Searchbar from "./Searchbar";
+import { Radar, House, icons } from "lucide-react";
 
-const navlink = ["dashboard", "home"];
+const navlink = [{ place: "home", icon: House }];
 const NavBar = () => {
   return (
     <>
       <Sheet>
-        <SheetTrigger className="absolute right-10 bottom-5  w-10 h-10 bg-white rounded-full text-black">3</SheetTrigger>
+        <SheetTrigger className="fixed right-10 bottom-10" asChild>
+          <Button size={"icon"} className="rounded-full">
+            <Radar />
+          </Button>
+        </SheetTrigger>
 
         <SheetContent side={"left"}>
           <SheetHeader>
             <SheetTitle>Fields</SheetTitle>
             <SheetDescription>
-              {navlink.map((ele) => {
+              {navlink.map((ele, index) => {
                 return (
-                  <>
-                    <div className="h-[70px] w-[70px] bg-white rounded-full hover:rounded-xl transition-all duration-100 ease-linear my-5 ">
-                      sum
-                    </div>
-                  </>
+                  <Button
+                    size="icon"
+                    className=" bg-white rounded-full hover:rounded-xl transition-all duration-100 ease-linear my-5 text-black flex justify-center items-center"
+                  >
+                    {React.createElement(ele.icon)}
+                  </Button>
                 );
               })}
             </SheetDescription>

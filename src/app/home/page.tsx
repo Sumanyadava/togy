@@ -22,7 +22,7 @@ const page = () => {
   return (
     <div className="text-lg h-screen ">
       {/* heading  */}
-      <div className="search_here  flex justify-between items-center border flex-col sm:flex-row gap-5 p-5">
+      <div className="search_here  flex justify-between items-center border flex-col md:flex-row gap-5 p-5">
         <Button variant={"ghost"} className="mx-5 text-xl">
           Togo
         </Button>
@@ -54,20 +54,22 @@ const page = () => {
       </div>
 
       {/* main  */}
-      <div className="body_here  h-auto flex flex-wrap gap-4 ">
-        <div className="top_header bg-black flex w-full justify-around items-center">
+      <div className="body_here  h-auto flex flex-wrap gap-4 justify-center ">
+        <div className="top_header bg-black flex flex-col-reverse w-full justify-around items-center md:flex-row">
           <CurrentlyWorking />
           <ChallengeTimer />
         </div>
 
         <ShortTodo />
         <LongTodo />
+        <LongTodo />
       </div>
 
-      <div className="absolute right-10 bottom-10">
+      <div className=" right-10 bottom-20 fixed mb-1">
         <TodayCard />
         
       </div>
+
     </div>
   );
 };

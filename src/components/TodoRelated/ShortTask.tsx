@@ -1,4 +1,4 @@
-import { Check, Ellipsis } from "lucide-react";
+import { Check, Ellipsis, EyeOff, SquarePen, Trash2 } from "lucide-react";
 import React from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "@/components/ui/badge";
@@ -21,15 +21,15 @@ const ShortTask = () => {
       </div>
 
       <Popover>
-        <PopoverTrigger>
-          <Button variant={"ghost"} className="w-14">
-            <Ellipsis className="h-5 w-[70px] " />
+        <PopoverTrigger asChild>
+          <Button variant={"ghost"}>
+            <Ellipsis  />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="  flex flex-col  w-24">
-          <Button variant={"ghost"} className="text-xs">Edit</Button>
-          <Button variant={"ghost"} className="text-xs">Hide</Button>
-          <Button variant={"ghost"} className="text-xs">Delete</Button>
+        <PopoverContent className="  flex w-min   ">
+          <Button variant={"ghost"} className="text-xs"><SquarePen /></Button>
+          <Button variant={"ghost"} className="text-xs"><EyeOff /></Button>
+          <Button variant={"destructive"} className="text-xs"><Trash2 /></Button>
 
         </PopoverContent>
       </Popover>
