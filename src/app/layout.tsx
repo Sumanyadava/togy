@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`scrollbar-custom ${inter.className}`} suppressHydrationWarning >
+      <body className={`scrollbar-custom ${inter.className} h-screen w-full `} suppressHydrationWarning >
       <ThemeProvider
             attribute="class"
             defaultTheme="dark"

@@ -29,9 +29,15 @@ const TaskUi = () => {
           </Button>
         </PopoverTrigger>
         <PopoverContent className="  flex w-min [&>*]:m-1  ">
+          <button>
           <SquarePen size={20} className="hover:bg-white" />
+          </button>
+          <button>
           <EyeOff size={20} />
+          </button>
+          <button>
           <Trash2 size={20}/>
+          </button>
         </PopoverContent>
       </Popover>
     </div>

@@ -7,7 +7,7 @@ const ChallengeTimer = () => {
      lg:text-9xl md:text-6xl text-6xl  bg-gray-3 items-baseline font-bold flex-wrap  justify-center"
     >
       21:20:31
-      <p className=" font-light text-xl">Change Future</p>
+      <p className=" font-light text-xl ml-3">Change Future</p>
     </div>
   );
 };

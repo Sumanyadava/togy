@@ -13,63 +13,41 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import TodayCard from "@/components/TodayCard";
-import ShortTodo from "@/components/TodoRelated/ShortTodo";
+import ShortTodo from "@/components/TodoRelated/shortTask/ShortTodo";
 import ChallengeTimer from "@/components/ChallengeTimer";
 import LongTodo from "@/components/TodoRelated/LongTask";
 import { Habbits } from "./components/Habbits";
+import HeaderHome from "./components/HeaderHome";
 
 const page = () => {
   return (
     <div className="text-lg h-screen ">
-      {/* heading  */}
-      <div className="search_here  flex justify-between items-center border flex-col md:flex-row gap-5 p-5">
-        <Button variant={"ghost"} className="mx-5 text-xl">
-          Togo
-        </Button>
-
-        <Searchbar />
-
-        <div className="flex gap-5 mx-5">
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button>Week</Button>
-            </PopoverTrigger>
-            <PopoverContent>Your Task for This week</PopoverContent>
-          </Popover>
-
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button>Habbits</Button>
-            </PopoverTrigger>
-            <PopoverContent>Your Habbits</PopoverContent>
-          </Popover>
-
-          <Habbits />
-
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-        </div>
-      </div>
+      <HeaderHome />
 
       {/* main  */}
-      <div className="body_here  h-auto flex flex-wrap gap-4 justify-center ">
+      <div className="body_here   flex flex-wrap gap-4 justify-center   ">
         <div className="top_header bg-black flex flex-col-reverse w-full justify-around items-center md:flex-row">
           <CurrentlyWorking />
           <ChallengeTimer />
         </div>
 
         <ShortTodo />
+        <ShortTodo />
+
+        <ShortTodo />
+        <ShortTodo />
+
+        <ShortTodo />
+        <ShortTodo />
+
         <LongTodo />
         <LongTodo />
       </div>
 
       <div className=" right-10 bottom-20 fixed mb-1">
         <TodayCard />
-        
       </div>
-
+      <div className="bg-red-400 h-screen"> asd </div>
     </div>
   );
 };

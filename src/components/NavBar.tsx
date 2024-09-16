@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Sheet,
@@ -13,9 +14,11 @@ Button;
 import { Input } from "@/components/ui/input";
 import Searchbar from "./Searchbar";
 import { Radar, House, icons } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const navlink = [{ place: "home", icon: House }];
 const NavBar = () => {
+  const router = useRouter();
   return (
     <>
       <Sheet>
@@ -34,6 +37,10 @@ const NavBar = () => {
                   <Button
                     size="icon"
                     className=" bg-white rounded-full hover:rounded-xl transition-all duration-100 ease-linear my-5 text-black flex justify-center items-center"
+                    onClick={() => {
+                      router.push(ele.place);
+                      
+                    }}
                   >
                     {React.createElement(ele.icon)}
                   </Button>

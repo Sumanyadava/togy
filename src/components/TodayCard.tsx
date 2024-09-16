@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/popover";
 import HoursLeftInDay from "@/helper/timeRelated/HoursLeftInDay";
 
+
 interface SetupItemProps {
   text: string;
   completed: boolean;
@@ -93,6 +94,7 @@ const SetupItem: React.FC<SetupItemProps> = ({ text, completed, onToggle }) => (
     onClick={onToggle}
   >
     <div className="flex items-center">
+
       {completed ? (
         <svg
           className="w-5 h-5 mr-2 text-green-500"
@@ -108,10 +110,14 @@ const SetupItem: React.FC<SetupItemProps> = ({ text, completed, onToggle }) => (
       ) : (
         <div className="w-5 h-5 mr-2 border-2 border-gray-400 rounded-full"></div>
       )}
+      
+
+    
       <span className={`text-white ${completed ? "line-through " : ""}`}>
         {text}
       </span>
     </div>
+
     <svg
       className="w-5 h-5 text-gray-400"
       fill="none"
@@ -125,6 +131,7 @@ const SetupItem: React.FC<SetupItemProps> = ({ text, completed, onToggle }) => (
         d="M9 5l7 7-7 7"
       />
     </svg>
+
   </div>
 );
 
