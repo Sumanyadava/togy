@@ -20,22 +20,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import TaskUi from "@/components/TodoRelated/TaskUi";
+import LongTaskUi from "@/components/TodoRelated/LongTaskUi";
 
 export default function CurrentlyWorking() {
   return (
     <Card className="w-[350px] m-5 h-min">
       <CardHeader>
         <CardTitle>Currently Working</CardTitle>
-        <CardDescription>These are all the tasks you are currently working on.</CardDescription>
+        <CardDescription>Just Click and you will you go to your respective pages</CardDescription>
       </CardHeader>
       <CardContent className="scrollbar-custom overflow-y-scroll h-[20vh] mb-3">
-        <TaskUi />
-        <TaskUi />
-        <TaskUi />
-        <TaskUi />
-        <TaskUi />
-        <TaskUi />
-        <TaskUi />
+        
+        <LongTaskUi />
+        <LongTaskUi />
+        <LongTaskUi />
+
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline">Cancel</Button>

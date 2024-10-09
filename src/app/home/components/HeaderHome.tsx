@@ -15,12 +15,17 @@ import {
 import TodayCard from "@/components/TodayCard";
 import ShortTodo from "@/components/TodoRelated/shortTask/ShortTodo";
 import ChallengeTimer from "@/components/ChallengeTimer";
-import LongTodo from "@/components/TodoRelated/LongTask";
+import LongTodo from "@/components/TodoRelated/LongTodo";
 import { Habbits } from "./Habbits";
 import { Badge } from "@/components/ui/badge";
 import { AvatarWithNotification } from "@/components/ui/avatar-with-notification";
+import { useRouter } from "next/navigation";
+import LongTaskUi from "@/components/TodoRelated/LongTaskUi";
+import ShortTask from "@/components/TodoRelated/shortTask/ShortTask";
+import TaskUi from "@/components/TodoRelated/TaskUi";
 
 const HeaderHome = () => {
+  const router = useRouter();
   return (
     <div className="search_here  flex justify-between items-center border flex-col md:flex-row gap-5 p-5">
       <Button variant={"ghost"} className="mx-5 text-xl">
@@ -34,27 +39,35 @@ const HeaderHome = () => {
           <PopoverTrigger asChild>
             <Button>Week</Button>
           </PopoverTrigger>
-          <PopoverContent>Your Task for This week</PopoverContent>
+          <PopoverContent>
+            Deadline -
+            <LongTaskUi />
+          </PopoverContent>
         </Popover>
 
         <Popover>
           <PopoverTrigger asChild>
             <Button>Habbits</Button>
           </PopoverTrigger>
-          <PopoverContent>Your Habbits</PopoverContent>
+          <PopoverContent>
+            Habbits -
+            <LongTaskUi />
+            <TaskUi task_name={"hey"} isChecked={true} isEditable={false} />
+            <TaskUi task_name={"hey"} isChecked={true} isEditable={false} />
+            <LongTaskUi />
+            go full
+          </PopoverContent>
         </Popover>
 
         <Habbits />
-
-        
-
-        <AvatarWithNotification
-        src="https://github.com/shadcn.png"
-        alt="Another User"
-        fallback="AB"
-        notificationCount={120}
-      />
-        
+        <div onClick={() => router.push("/Profile")}>
+          <AvatarWithNotification
+            src="https://github.com/shadcn.png"
+            alt="Another User"
+            fallback="AB"
+            notificationCount={1}
+          />
+        </div>
       </div>
     </div>
   );

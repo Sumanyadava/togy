@@ -4,8 +4,9 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 
+import { TooltipProvider } from "@/components/plate-ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,17 +22,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`scrollbar-custom ${inter.className} h-screen w-full `} suppressHydrationWarning >
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <NavBar />
-        {children}
-        <Toaster richColors  />
+      <body
+        className={`scrollbar-custom ${inter.className} h-screen w-full `}
+        suppressHydrationWarning
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider
+              disableHoverableContent
+              delayDuration={500}
+              skipDelayDuration={0}
+            >
+          <NavBar />
+          {children}
+          <Toaster richColors />
 
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Plus, CheckCircle, AlertCircle, Tag, Calendar } from "lucide-react";
+import { Plus, CheckCircle, AlertCircle, Tag, Calendar, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -31,8 +31,11 @@ export default function AddTodoShort() {
             onChange={(e) => setNewTask(e.target.value)}
             className="w-[80%]"
           />
-          <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <Plus className=" h-4 w-4" /> 
+          <Button
+            type="submit"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            <Plus className=" h-4 w-4" />
           </Button>
         </form>
 
@@ -72,7 +75,18 @@ export default function AddTodoShort() {
               <SelectItem value="study">Study</SelectItem>
             </SelectContent>
           </Select>
-          
+
+          <Select>
+            <SelectTrigger className="w-max bg-background">
+              <Settings className="mr-2 h-4 w-4 text-muted-foreground" />
+              <SelectValue placeholder="Settings" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="work">View</SelectItem>
+              <SelectItem value="personal">Add Tag</SelectItem>
+              <SelectItem value="study">Add Status</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </CardContent>
     </Card>
