@@ -1,25 +1,43 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+//because i am importing challenge time that use useRouter()
 
-export default function Home() {
-  const router = useRouter();
+import CurrentlyWorking from "./home/components/CurrentlyWorking";
 
-  const handleClick = (where: string) => {
-    router.push(`/${where}`);
-    console.log(where);
-  };
+import TodayCard from "@/components/TodayCard";
+import ShortTodo from "@/components/TodoRelated/shortTask/ShortTodo";
+import ChallengeTimer from "@/components/ChallengeTimer";
+import LongTodo from "@/components/TodoRelated/LongTodo";
 
+import HeaderHome from "./home/components/HeaderHome";
+import { useState } from "react";
+
+const page = () => {
+
+  
   return (
-    <div className="flex h-screen w-full justify-center items-center gap-12 flex-col text-6xl  ">
-      PAGES
-      <div className="flex w-1/2 justify-around [&>*]:bg-gray-400 [&>*]:p-2 [&>*]:rounded-md text-sm">
-        <Button onClick={() => handleClick("home")}>Home</Button>
+    <div className="text-lg h-screen ">
+      <HeaderHome />
 
-        <Button onClick={() => handleClick("Login")}>Login</Button>
-        <Button onClick={() => handleClick("Signup")}>Signup</Button>
-        <Button onClick={() => handleClick("Profile")}>Profile</Button>
+      {/* main  */}
+      <div className="body_here   flex flex-wrap gap-4 justify-center   ">
+        <div className="top_header bg-black flex flex-col-reverse w-full justify-around items-center md:flex-row">
+          <CurrentlyWorking />
+          <ChallengeTimer />
+
+        </div>
+
+        <ShortTodo />
+        <ShortTodo />
+
+        <LongTodo />
+        <LongTodo />
+      </div>
+
+      <div className=" right-10 bottom-20 fixed mb-1">
+        <TodayCard />
       </div>
     </div>
   );
-}
+};
+
+export default page;

@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
 import { TooltipProvider } from "@/components/plate-ui/tooltip";
+import {Providers} from "./GlobalRedux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,23 +27,24 @@ export default function RootLayout({
         className={`scrollbar-custom ${inter.className} h-screen w-full `}
         suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TooltipProvider
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <TooltipProvider
               disableHoverableContent
               delayDuration={500}
               skipDelayDuration={0}
             >
-          <NavBar />
-          {children}
-          <Toaster richColors />
-
-          </TooltipProvider>
-        </ThemeProvider>
+              <NavBar />
+              {children}
+              <Toaster richColors />
+            </TooltipProvider>
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

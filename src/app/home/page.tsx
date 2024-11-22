@@ -1,27 +1,17 @@
 "use client";
-import NavBar from "@/components/NavBar";
-import Searchbar from "@/components/Searchbar";
-import { Button } from "@/components/ui/button";
-import { SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
 import CurrentlyWorking from "./components/CurrentlyWorking";
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import TodayCard from "@/components/TodayCard";
 import ShortTodo from "@/components/TodoRelated/shortTask/ShortTodo";
 import ChallengeTimer from "@/components/ChallengeTimer";
 import LongTodo from "@/components/TodoRelated/LongTodo";
-import { Habbits } from "./components/Habbits";
+
 import HeaderHome from "./components/HeaderHome";
-import { Calendar } from "@/components/ui/calendar";
 
 const page = () => {
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [date, setDate] = React.useState(new Date());
   return (
     <div className="text-lg h-screen ">
       <HeaderHome />
